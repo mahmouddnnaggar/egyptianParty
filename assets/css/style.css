@@ -7,6 +7,8 @@ a {
 }
 
 :root {
+    scroll-snap-type: y proximity;
+    overflow-y: scroll;
     --main-color: #ff76ce;
     --second-color: #5ab2ff;
     --color-in-dark: #e0e0e0;
@@ -62,10 +64,10 @@ aside .to-open {
     cursor: pointer;
     user-select: none;
 }
-@media (max-width:500px) {
-  aside .to-open {
-    top: 25%;
-  }
+@media (max-width: 500px) {
+    aside .to-open {
+        top: 25%;
+    }
 }
 
 .to-close {
@@ -101,6 +103,7 @@ aside .to-open {
 }
 
 header {
+    scroll-snap-align: start;
     background-image: linear-gradient(to bottom, #000000, #0000008f),
         url(../imgs/top-party-destinations-scaled.jpeg);
     background-position: center;
@@ -125,6 +128,7 @@ header p {
 }
 
 section.singers {
+    scroll-snap-align: start;
     background-image: linear-gradient(to bottom, #000000b8, #0000007d),
         linear-gradient(to right, var(--second-color), var(--main-color));
     background-color: #000000;
@@ -212,6 +216,7 @@ section.countdown .box span {
 }
 
 section.contact-us {
+    scroll-snap-align: start;
     padding-block: 80px;
     background-image: linear-gradient(to bottom, #000000b8, #0000007d),
         linear-gradient(to right, var(--second-color), var(--main-color));

@@ -67,6 +67,36 @@ $("textarea[name='message']").on("input", function (e) {
     } else if (rem == 0) {
         $($remaining).children("span").html("Zero");
     } else {
-        $($remaining).html(`<span class="text-danger">No</span> Characters Remaining Yet`);
+        $($remaining).html(
+            `<span class="text-danger">No</span> Characters Remaining Yet`
+        );
     }
 });
+
+// ^ scrolling
+function scrollToSection(clickable, section) {
+    $(clickable).on("click", function () {
+        let target = $(section);
+        console.log(target);
+
+        $("html, body").animate(
+            {
+                scrollTop: $(target).offset().top,
+            },
+            500,
+            "linear"
+        );
+    });
+}
+function handleAllSections() {
+    let allSectionAndAnchorSelectors = [
+        ["a[href='#home']", "header"],
+        ["a[href='#details']", "section.singers"],
+        ["a[href='#duration']", "section.countdown"],
+        ["a[href='#contact']", "section.contact-us"],
+    ];
+    $(allSectionAndAnchorSelectors).each(function(_, e) {
+        scrollToSection(e[0], e[1]);
+    })
+}
+handleAllSections();
