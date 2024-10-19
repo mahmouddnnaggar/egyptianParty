@@ -53,7 +53,7 @@ const countdown = setInterval(() => {
 
     if (timeLeft < 0) {
         clearInterval(countdown);
-        document.getElementById("countdown").innerHTML = "Countdown Ended!";
+        alert("Countdown Ended!");
     }
 }, 1000);
 
@@ -95,8 +95,8 @@ function handleAllSections() {
         ["a[href='#duration']", "section.countdown"],
         ["a[href='#contact']", "section.contact-us"],
     ];
-    $(allSectionAndAnchorSelectors).each(function(_, e) {
+    $(allSectionAndAnchorSelectors).each(function (_, e) {
         scrollToSection(e[0], e[1]);
-    })
+    });
 }
 handleAllSections();
