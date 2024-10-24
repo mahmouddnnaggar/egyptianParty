@@ -174,12 +174,13 @@ section.singers {
   transition: var(--transition-duration);
 }
 
-.accordion p {
+.accordion h3 {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 20px;
   color: #f2f2f2;
   letter-spacing: 1.7px;
+  padding-block: 2px 8px;
 }
 
 .active,
